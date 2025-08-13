@@ -18,9 +18,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	public static WebDriver driver;
 	public static Properties prop = new Properties();
-//	public static Properties loc = new Properties();
+
 	public static FileReader fr;
-//	public static FileReader fr_loctors;
+
 	
 	@BeforeMethod
 
@@ -29,10 +29,8 @@ public class BaseTest {
 		{
 			 
 			fr = new FileReader(System.getProperty("user.dir")+ "\\src\\test\\resources\\configfiles\\config.properties");
-//			fr_loctors = new FileReader(System.getProperty("user.dir")+ "\\src\\test\\resources\\configfiles\\locators.properties");
 			prop.load(fr);
-//			loc.load(fr_loctors);
-		
+
 		}
 		
 		if(prop.getProperty("browser").equalsIgnoreCase("chrome")) {
